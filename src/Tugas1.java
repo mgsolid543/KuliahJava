@@ -28,21 +28,22 @@ public class Tugas1 extends JFrame implements ActionListener {
     boolean onOff = false; //petunjuk aktif/tidak nya stopwatch
     
     String teks = "";
+    String arrow = " -> ";
     
     public void actionPerformed(ActionEvent e) {
         if (onOff == true) {
             if (e.getSource() == timer) {
                 if (detik < 10) {
                     detik++;
-                    if (detik % 2 != 0) teks = "Ana";
-                    else teks = "Budi";
+                    if (detik % 2 != 0) teks = arrow + "Ana";
+                    else teks = arrow + "Budi";
                 } else {
                     detik = 0;
                     //menit++;
                     menit = 0;
-                    teks = ":)";
+                    teks = arrow + ":)";
                 }
-                lbCounter.setText(change2Digit(menit) + ":" + change2Digit(detik) + " -> " + teks);
+                lbCounter.setText(change2Digit(menit) + ":" + change2Digit(detik) + teks);
                 //lbCounter.setText(teks);
             }
         }
@@ -58,6 +59,7 @@ public class Tugas1 extends JFrame implements ActionListener {
             onOff = false;
             detik = 0;
             menit = 0;
+            teks = "";
         }
     }
     
