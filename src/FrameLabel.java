@@ -8,13 +8,13 @@ import javax.swing.JLabel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author irpan
  */
 public class FrameLabel extends JFrame {
-    String kalimat = "Welcome To Java World" ;
+
+    String kalimat = "Welcome To Java World";
     JLabel label = new JLabel();
 //Constructor: untuk inisialisasi
 //Mengatur posisi komponen GUI di Frame
