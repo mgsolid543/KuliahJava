@@ -16,6 +16,7 @@ import javax.swing.Timer;
  * @author irpan
  */
 public class StopWatch2 extends JFrame implements ActionListener {
+
     JLabel lbCounter = new JLabel();
     Timer timer = new Timer(100, this);
 

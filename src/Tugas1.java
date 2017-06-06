@@ -12,12 +12,12 @@ import javax.swing.Timer;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author irpan
  */
 public class Tugas1 extends JFrame implements ActionListener {
+
     JLabel lbCounter = new JLabel();
     Timer timer = new Timer(1000, this);
     JButton bStart = new JButton("Start");
@@ -26,17 +26,20 @@ public class Tugas1 extends JFrame implements ActionListener {
     int detik = 0;
     int menit = 0;
     boolean onOff = false; //petunjuk aktif/tidak nya stopwatch
-    
+
     String teks = "";
     String arrow = " -> ";
-    
+
     public void actionPerformed(ActionEvent e) {
         if (onOff == true) {
             if (e.getSource() == timer) {
                 if (detik < 10) {
                     detik++;
-                    if (detik % 2 != 0) teks = arrow + "Ana";
-                    else teks = arrow + "Budi";
+                    if (detik % 2 != 0) {
+                        teks = arrow + "Ana";
+                    } else {
+                        teks = arrow + "Budi";
+                    }
                 } else {
                     detik = 0;
                     //menit++;
@@ -62,7 +65,7 @@ public class Tugas1 extends JFrame implements ActionListener {
             teks = "";
         }
     }
-    
+
     public String change2Digit(int c) {
         String digit;
         if (c < 10) {
@@ -79,7 +82,7 @@ public class Tugas1 extends JFrame implements ActionListener {
         this.setSize(600, 250);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false); 
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
 
         lbCounter.setText("00:00");
@@ -98,7 +101,7 @@ public class Tugas1 extends JFrame implements ActionListener {
         this.add(bEnd);
         bEnd.addActionListener(this);
     }
- 
+
     public static void main(String[] args) {
         new Tugas1();
     }
